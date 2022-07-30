@@ -1,18 +1,18 @@
-const buttonSearch = document.querySelector(".search-button");
 filmUnggulan();
 cinemaxxi();
-console.log(
-  "%c WELCOME WELCOME DI TOOLS DEVELOPER",
-  "font-size: 50px; color: #eb77ae"
-);
-console.log(
-  "%c Thank you so much visit My Website",
-  "font-size: 50px; color: #4dc1bf"
-);
-console.log(
-  "%c Refrensi My Website: https://94.103.82.88/",
-  "font-size: 30px; color: #8459e8"
-);
+const buttonSearch = document.querySelector(".search-button");
+// console.log(
+//   "%c WELCOME WELCOME DI TOOLS DEVELOPER",
+//   "font-size: 50px; color: #eb77ae"
+// );
+// console.log(
+//   "%c Thank you so much visit My Website",
+//   "font-size: 50px; color: #4dc1bf"
+// );
+// console.log(
+//   "%c Refrensi My Website: https://94.103.82.88/",
+//   "font-size: 30px; color: #8459e8"
+// );
 
 function deleteElemet() {
   const buttonUnggulan = document.querySelector(".button-unggulan");
@@ -284,7 +284,7 @@ async function marvel() {
     containerMovie.innerHTML = "";
   }
   const marvel = await getMarvel();
-  updateMarvel(marvel);
+  updateFilmUnggulan(marvel);
   deleteElemet();
 }
 
@@ -293,14 +293,6 @@ function getMarvel() {
     .then((response) => response.json())
     .then((response) => response.Search)
     .catch((error) => console.log(error));
-}
-function updateMarvel(marvel) {
-  let dataMarvel = "";
-  marvel.forEach((marvelMovies) => {
-    dataMarvel += showMarvel(marvelMovies);
-    const filmGenre = document.querySelector(".film-unggulan");
-    filmGenre.innerHTML = dataMarvel;
-  });
 }
 
 // Fungsi Harry Potter
@@ -314,7 +306,7 @@ async function harryPotter() {
     containerMovie.innerHTML = "";
   }
   const harry = await getHarryPotter();
-  updateHarryPotter(harry);
+  updateFilmUnggulan(harry);
   deleteElemet();
 }
 function getHarryPotter() {
@@ -322,14 +314,6 @@ function getHarryPotter() {
     .then((response) => response.json())
     .then((response) => response.Search)
     .catch((error) => console.log(error));
-}
-function updateHarryPotter(harry) {
-  let dataHarry = "";
-  harry.forEach((harryMovies) => {
-    dataHarry += showHarryPotter(harryMovies);
-    const film = document.querySelector(".film-unggulan");
-    film.innerHTML = dataHarry;
-  });
 }
 
 // Genre Action
@@ -346,7 +330,7 @@ async function genreAction() {
   const fastFourius = await getFastForius();
   const action = [...genreExtration, ...resident, ...fastFourius];
 
-  updateGenreAction(action);
+  updateFilmUnggulan(action);
   deleteElemet();
 }
 
@@ -369,15 +353,6 @@ function getFastForius() {
     .catch((error) => console.log(error));
 }
 
-function updateGenreAction(genreAction) {
-  let dataGenreAction = "";
-  genreAction.forEach((genre) => {
-    dataGenreAction += showAnimation(genre);
-    const filmGenre = document.querySelector(".film-unggulan");
-    filmGenre.innerHTML = dataGenreAction;
-  });
-}
-
 // Genre Animation
 async function genreAnimation() {
   const undefined = document.querySelector(".undefined");
@@ -390,7 +365,7 @@ async function genreAnimation() {
   const genreDoraemon = await getFilmAnimation();
   const naruto = await getNaruto();
   const genreAnimation = [...genreDoraemon, ...naruto];
-  updateGenreAnimation(genreAnimation);
+  updateFilmUnggulan(genreAnimation);
   deleteElemet();
 }
 function getFilmAnimation() {
@@ -405,14 +380,7 @@ function getNaruto() {
     .then((response) => response.Search)
     .catch((error) => console.log(error));
 }
-function updateGenreAnimation(genreAnimation) {
-  let dataGenreAnimation = "";
-  genreAnimation.forEach((genre) => {
-    dataGenreAnimation += showAnimation(genre);
-    const filmGenre = document.querySelector(".film-unggulan");
-    filmGenre.innerHTML = dataGenreAnimation;
-  });
-}
+
 // Fungsi Adventure
 
 async function adventure() {
@@ -426,7 +394,7 @@ async function adventure() {
   const jura = await getJurassic();
   const maze = await getMazeRunner();
   const adventure = [...jura, ...maze];
-  updateAdventure(adventure);
+  updateFilmUnggulan(adventure);
   deleteElemet();
 }
 function getJurassic() {
@@ -441,14 +409,7 @@ function getMazeRunner() {
     .then((response) => response.Search)
     .catch((error) => console.log(error));
 }
-function updateAdventure(adventure) {
-  let dataAdventure = "";
-  adventure.forEach((adventureMovies) => {
-    dataAdventure += showAdventure(adventureMovies);
-    const filmGenre = document.querySelector(".film-unggulan");
-    filmGenre.innerHTML = dataAdventure;
-  });
-}
+
 // Biography
 async function biography() {
   const undefined = document.querySelector(".undefined");
@@ -462,7 +423,7 @@ async function biography() {
   const lion = await getLion();
   const america = await getAmerica();
   const biography = [...social, ...lion, ...america];
-  updateBiography(biography);
+  updateFilmUnggulan(biography);
   deleteElemet();
 }
 function getSocial() {
@@ -483,14 +444,6 @@ function getAmerica() {
     .then((response) => response.Search)
     .catch((error) => console.log(error));
 }
-function updateBiography(bio) {
-  let databio = "";
-  bio.forEach((bioMovies) => {
-    databio += showBiography(bioMovies);
-    const filmGenre = document.querySelector(".film-unggulan");
-    filmGenre.innerHTML = databio;
-  });
-}
 
 // Comedy
 async function comedy() {
@@ -504,7 +457,7 @@ async function comedy() {
   const deadpool = await getdeadpool();
   const minions = await getminions();
   const comed = [...deadpool, ...minions];
-  updateComedy(comed);
+  updateFilmUnggulan(comed);
   deleteElemet();
 }
 function getdeadpool() {
@@ -519,14 +472,6 @@ function getminions() {
     .then((response) => response.Search)
     .catch((error) => console.log(error));
 }
-function updateComedy(comed) {
-  let datacome = "";
-  comed.forEach((comedMovies) => {
-    datacome += showComedy(comedMovies);
-    const filmGenre = document.querySelector(".film-unggulan");
-    filmGenre.innerHTML = datacome;
-  });
-}
 
 // Crime
 async function crime() {
@@ -538,7 +483,7 @@ async function crime() {
     containerMovie.innerHTML = "";
   }
   const genreCrime = await getCrime();
-  updateCrime(genreCrime);
+  updateFilmUnggulan(genreCrime);
   deleteElemet();
 }
 function getCrime() {
@@ -546,14 +491,6 @@ function getCrime() {
     .then((response) => response.json())
     .then((response) => response.Search)
     .catch((error) => console.info(error));
-}
-function updateCrime(genreCrime) {
-  let dataCrime = "";
-  genreCrime.forEach((crime) => {
-    dataCrime += showCrime(crime);
-    const filmGenre = document.querySelector(".film-unggulan");
-    filmGenre.innerHTML = dataCrime;
-  });
 }
 
 // Drama
@@ -568,7 +505,7 @@ async function drama() {
   const godfather = await getFather();
   const greyhound = await getgreyHound();
   const drama = [...godfather, ...greyhound];
-  updateDrama(drama);
+  updateFilmUnggulan(drama);
   deleteElemet();
 }
 function getFather() {
@@ -583,14 +520,6 @@ function getgreyHound() {
     .then((response) => response.Search)
     .catch((error) => console.info(error));
 }
-function updateDrama(genreDrama) {
-  let dataDrama = "";
-  genreDrama.forEach((drama) => {
-    dataDrama += showDrama(drama);
-    const filmGenre = document.querySelector(".film-unggulan");
-    filmGenre.innerHTML = dataDrama;
-  });
-}
 
 // Horor
 async function horor() {
@@ -602,7 +531,7 @@ async function horor() {
     containerMovie.innerHTML = "";
   }
   const genreHoror = await getHoror();
-  updateHoror(genreHoror);
+  updateFilmUnggulan(genreHoror);
   deleteElemet();
 }
 function getHoror() {
@@ -610,14 +539,6 @@ function getHoror() {
     .then((response) => response.json())
     .then((response) => response.Search)
     .catch((error) => console.info(error));
-}
-function updateHoror(genreHoror) {
-  let dataHoror = "";
-  genreHoror.forEach((horor) => {
-    dataHoror += showHoror(horor);
-    const filmGenre = document.querySelector(".film-unggulan");
-    filmGenre.innerHTML = dataHoror;
-  });
 }
 
 // Mystery
@@ -632,7 +553,7 @@ async function mistery() {
   const harry = await getHarryPotter();
   const searching = await getSearching();
   const mistery = [...harry, ...searching];
-  updateMistery(mistery);
+  updateFilmUnggulan(mistery);
   deleteElemet();
 }
 
@@ -641,15 +562,6 @@ function getSearching() {
     .then((response) => response.json())
     .then((response) => response.Search)
     .catch((error) => console.info(error));
-}
-
-function updateMistery(mistery) {
-  let dataMystery = "";
-  mistery.forEach((misteryMovie) => {
-    dataMystery += showMistery(misteryMovie);
-    const filmGenre = document.querySelector(".film-unggulan");
-    filmGenre.innerHTML = dataMystery;
-  });
 }
 
 // Romance
@@ -665,7 +577,7 @@ async function romance() {
   const genreromaceDilan = await getDilan();
   // Jika inign mengabungkan kedua data film menjadi 1 antara film dilan dan titanic.
   const romanceFilm = [...genreromaceDilan, ...genreromaceTitanic];
-  updateRomance(romanceFilm);
+  updateFilmUnggulan(romanceFilm);
   deleteElemet();
 }
 function getTitanic() {
@@ -680,14 +592,6 @@ function getDilan() {
     .then((response) => response.Search)
     .catch((error) => console.info(error));
 }
-function updateRomance(romance) {
-  let dataRomance = "";
-  romance.forEach((roman) => {
-    dataRomance += showRomance(roman);
-    const filmGenre = document.querySelector(".film-unggulan");
-    filmGenre.innerHTML = dataRomance;
-  });
-}
 
 // Thiller
 async function thiller() {
@@ -701,7 +605,7 @@ async function thiller() {
   const trance = await getTrance();
   const survivor = await getSurvivor();
   const thiller = [...survivor, ...trance];
-  updateThiller(thiller);
+  updateFilmUnggulan(thiller);
   deleteElemet();
 }
 function getTrance() {
@@ -716,14 +620,7 @@ function getSurvivor() {
     .then((response) => response.Search)
     .catch((error) => console.info(error));
 }
-function updateThiller(genreThiller) {
-  let dataThiller = "";
-  genreThiller.forEach((thiller) => {
-    dataThiller += showThiller(thiller);
-    const filmGenre = document.querySelector(".film-unggulan");
-    filmGenre.innerHTML = dataThiller;
-  });
-}
+
 function showCards(movie) {
   return `<div class="col-md-2 my-3 ">
             <div class="card bg-dark text-white">
@@ -733,7 +630,7 @@ function showCards(movie) {
                 <h6 class="card-subtitle mb-2 text-muted">${movie.Year}</h6>
                 <a href="#" class="btn btn-primary modal-details-button"  data-bs-toggle="modal"
                 data-bs-target="#movieDetailsModal" data-imdbid ="${movie.imdbID}"
-                  >Show
+                  >
                   <details></details
                 ></a>
               </div>
@@ -794,221 +691,6 @@ function showCinema(cinema) {
                 <h6 class="card-subtitle mb-2 text-muted">${cinema.Year}</h6>
                 <a href="#" class="btn btn-primary modal-details-button"  data-bs-toggle="modal"
                 data-bs-target="#movieDetailsModal" data-imdbid ="${cinema.imdbID}"
-                  >Show
-                  <details></details
-                ></a>
-              </div>
-            </div>
-          </div>`;
-}
-
-function showAnimation(animation) {
-  return `<div class="col-md-2 my-3 ">
-            <div class="card bg-dark text-white">
-              <img src="${animation.Poster}" class="card-img-top" />
-              <div class="card-body">
-                <h5 class="card-title">${animation.Title}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">${animation.Year}</h6>
-                <a href="#" class="btn btn-primary modal-details-button"  data-bs-toggle="modal"
-                data-bs-target="#movieDetailsModal" data-imdbid ="${animation.imdbID}"
-                  >Show
-                  <details></details
-                ></a>
-              </div>
-            </div>
-          </div>`;
-}
-function showMarvel(marvel) {
-  return `<div class="col-md-2 my-3 ">
-            <div class="card bg-dark text-white">
-              <img src="${marvel.Poster}" class="card-img-top" />
-              <div class="card-body">
-                <h5 class="card-title">${marvel.Title}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">${marvel.Year}</h6>
-                <a href="#" class="btn btn-primary modal-details-button"  data-bs-toggle="modal"
-                data-bs-target="#movieDetailsModal" data-imdbid ="${marvel.imdbID}"
-                  >Show
-                  <details></details
-                ></a>
-              </div>
-            </div>
-          </div>`;
-}
-
-function showHarryPotter(harry) {
-  return `<div class="col-md-2 my-3 ">
-            <div class="card bg-dark text-white">
-              <img src="${harry.Poster}" class="card-img-top" />
-              <div class="card-body">
-                <h5 class="card-title">${harry.Title}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">${harry.Year}</h6>
-                <a href="#" class="btn btn-primary modal-details-button"  data-bs-toggle="modal"
-                data-bs-target="#movieDetailsModal" data-imdbid ="${harry.imdbID}"
-                  >Show
-                  <details></details
-                ></a>
-              </div>
-            </div>
-          </div>`;
-}
-function showAction(action) {
-  return `<div class="col-md-2 my-3 ">
-            <div class="card bg-dark text-white">
-              <img src="${action.Poster}" class="card-img-top" />
-              <div class="card-body">
-                <h5 class="card-title">${action.Title}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">${action.Year}</h6>
-                <a href="#" class="btn btn-primary modal-details-button"  data-bs-toggle="modal"
-                data-bs-target="#movieDetailsModal" data-imdbid ="${action.imdbID}"
-                  >Show
-                  <details></details
-                ></a>
-              </div>
-            </div>
-          </div>`;
-}
-
-function showAdventure(jura) {
-  return `<div class="col-md-2 my-3 ">
-            <div class="card bg-dark text-white">
-              <img src="${jura.Poster}" class="card-img-top" />
-              <div class="card-body">
-                <h5 class="card-title">${jura.Title}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">${jura.Year}</h6>
-                <a href="#" class="btn btn-primary modal-details-button"  data-bs-toggle="modal"
-                data-bs-target="#movieDetailsModal" data-imdbid ="${jura.imdbID}"
-                  >Show
-                  <details></details
-                ></a>
-              </div>
-            </div>
-          </div>`;
-}
-function showBiography(bioMovies) {
-  return `<div class="col-md-2 my-3 ">
-            <div class="card bg-dark text-white">
-              <img src="${bioMovies.Poster}" class="card-img-top" />
-              <div class="card-body">
-                <h5 class="card-title">${bioMovies.Title}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">${bioMovies.Year}</h6>
-                <a href="#" class="btn btn-primary modal-details-button"  data-bs-toggle="modal"
-                data-bs-target="#movieDetailsModal" data-imdbid ="${bioMovies.imdbID}"
-                  >Show
-                  <details></details
-                ></a>
-              </div>
-            </div>
-          </div>`;
-}
-
-function showComedy(comed) {
-  return `<div class="col-md-2 my-3 ">
-            <div class="card bg-dark text-white">
-              <img src="${comed.Poster}" class="card-img-top" />
-              <div class="card-body">
-                <h5 class="card-title">${comed.Title}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">${comed.Year}</h6>
-                <a href="#" class="btn btn-primary modal-details-button"  data-bs-toggle="modal"
-                data-bs-target="#movieDetailsModal" data-imdbid ="${comed.imdbID}"
-                  >Show
-                  <details></details
-                ></a>
-              </div>
-            </div>
-          </div>`;
-}
-
-function showCrime(crime) {
-  return `<div class="col-md-2 my-3 ">
-            <div class="card bg-dark text-white">
-              <img src="${crime.Poster}" class="card-img-top" />
-              <div class="card-body">
-                <h5 class="card-title">${crime.Title}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">${crime.Year}</h6>
-                <a href="#" class="btn btn-primary modal-details-button"  data-bs-toggle="modal"
-                data-bs-target="#movieDetailsModal" data-imdbid ="${crime.imdbID}"
-                  >Show
-                  <details></details
-                ></a>
-              </div>
-            </div>
-          </div>`;
-}
-function showDrama(drama) {
-  return `<div class="col-md-2 my-3 ">
-            <div class="card bg-dark text-white">
-              <img src="${drama.Poster}" class="card-img-top" />
-              <div class="card-body">
-                <h5 class="card-title">${drama.Title}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">${drama.Year}</h6>
-                <a href="#" class="btn btn-primary modal-details-button"  data-bs-toggle="modal"
-                data-bs-target="#movieDetailsModal" data-imdbid ="${drama.imdbID}"
-                  >Show
-                  <details></details
-                ></a>
-              </div>
-            </div>
-          </div>`;
-}
-
-function showHoror(horor) {
-  return `<div class="col-md-2 my-3 ">
-            <div class="card bg-dark text-white">
-              <img src="${horor.Poster}" class="card-img-top" />
-              <div class="card-body">
-                <h5 class="card-title">${horor.Title}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">${horor.Year}</h6>
-                <a href="#" class="btn btn-primary modal-details-button"  data-bs-toggle="modal"
-                data-bs-target="#movieDetailsModal" data-imdbid ="${horor.imdbID}"
-                  >Show
-                  <details></details
-                ></a>
-              </div>
-            </div>
-          </div>`;
-}
-
-function showRomance(roman) {
-  return `<div class="col-md-2 my-3 ">
-            <div class="card bg-dark text-white">
-              <img src="${roman.Poster}" class="card-img-top" />
-              <div class="card-body">
-                <h5 class="card-title">${roman.Title}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">${roman.Year}</h6>
-                <a href="#" class="btn btn-primary modal-details-button"  data-bs-toggle="modal"
-                data-bs-target="#movieDetailsModal" data-imdbid ="${roman.imdbID}"
-                  >Show
-                  <details></details
-                ></a>
-              </div>
-            </div>
-          </div>`;
-}
-function showThiller(thiller) {
-  return `<div class="col-md-2 my-3 ">
-            <div class="card bg-dark text-white">
-              <img src="${thiller.Poster}" class="card-img-top" />
-              <div class="card-body">
-                <h5 class="card-title">${thiller.Title}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">${thiller.Year}</h6>
-                <a href="#" class="btn btn-primary modal-details-button"  data-bs-toggle="modal"
-                data-bs-target="#movieDetailsModal" data-imdbid ="${thiller.imdbID}"
-                  >Show
-                  <details></details
-                ></a>
-              </div>
-            </div>
-          </div>`;
-}
-function showMistery(mistery) {
-  return `<div class="col-md-2 my-3 ">
-            <div class="card bg-dark text-white">
-              <img src="${mistery.Poster}" class="card-img-top" />
-              <div class="card-body">
-                <h5 class="card-title">${mistery.Title}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">${mistery.Year}</h6>
-                <a href="#" class="btn btn-primary modal-details-button"  data-bs-toggle="modal"
-                data-bs-target="#movieDetailsModal" data-imdbid ="${mistery.imdbID}"
                   >Show
                   <details></details
                 ></a>
