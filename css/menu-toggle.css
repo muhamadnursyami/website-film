@@ -1,0 +1,11 @@
+.toggle {
+  /* width: 10%; */
+  /* background-color: black; */
+  padding: 10px 15px;
+  cursor: pointer;
+}
+.toggle i {
+  font-size: 20px;
+  color: black;
+  transition: 0.3 s;
+}

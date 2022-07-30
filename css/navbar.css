@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  /* height: 90px; */
+  background-color: black;
+}
+
+.logo img {
+  margin-top: -20px;
+
+  height: 100px;
+}
+i {
+  color: white;
+  padding-right: 5px;
+}
+
+/* .body-film {
+  height: 1500px;
+} */
