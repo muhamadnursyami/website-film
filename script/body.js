@@ -224,12 +224,6 @@ async function cinemaxxi() {
     cinemaAtlas,
   ];
   updateCinema(cinema);
-  alert(`Noted! ,Untuk TV Series itu tidak bisa
-Dikarenakan Kalo Kebanyakan Request WEBSITE akan lag.
-ini saja sudah lag, dan lambat saat request apinya
-API NYA FREE, Jadi punya keterbatasan dalam requestnya.
-Dan masih banyak kekurangan dalam website ini.
-Laporkan Jika ada bug atau kesalahan, Terima Kasih 🙏.`);
 }
 function getPawsofFury() {
   return fetch(
