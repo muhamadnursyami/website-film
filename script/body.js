@@ -1,18 +1,21 @@
+alert(`Jika tiba-tiba tidak berfungsi, segarkan halaman dan coba lagi. 
+Karena request yang terlalu banyak ke API website menjadi lambat.`);
 filmUnggulan();
 cinemaxxi();
+
 const buttonSearch = document.querySelector(".search-button");
-// console.log(
-//   "%c WELCOME WELCOME DI TOOLS DEVELOPER",
-//   "font-size: 50px; color: #eb77ae"
-// );
-// console.log(
-//   "%c Thank you so much visit My Website",
-//   "font-size: 50px; color: #4dc1bf"
-// );
-// console.log(
-//   "%c Refrensi My Website: https://94.103.82.88/",
-//   "font-size: 30px; color: #8459e8"
-// );
+console.log(
+  "%c WELCOME WELCOME DI TOOLS DEVELOPER",
+  "font-size: 50px; color: #eb77ae"
+);
+console.log(
+  "%c Thank you so much visit My Website",
+  "font-size: 50px; color: #4dc1bf"
+);
+console.log(
+  "%c Refrensi My Website: https://94.103.82.88/",
+  "font-size: 30px; color: #8459e8"
+);
 
 function deleteElemet() {
   const buttonUnggulan = document.querySelector(".button-unggulan");
